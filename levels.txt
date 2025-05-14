@@ -1,0 +1,45 @@
+Level designs
+
+//very simple
+    game_map = []
+
+    # Top wall
+    game_map.append("#" * 25)
+
+    # Rows 1–11: empty
+    for _ in range(1, 12):
+        game_map.append("#" + " " * 23 + "#")
+
+    # Row 12: the single pellet strand with the player in the center
+    # Let's put the player at column 12 (index 12), surrounded by dots
+    game_map.append("#" + "." * 11 + "P" + "." * 11 + "#")
+
+    # Rows 13–23: empty
+    for _ in range(13, 24):
+        game_map.append("#" + " " * 23 + "#")
+
+    # Bottom wall
+    game_map.append("#" * 25)
+
+
+// decently complex
+game_map = []
+    # Top wall
+    game_map.append("#" * 25)
+    # Inner rows
+    for i in range(1, 24):
+        if i == 12:
+            # Player start row
+            row = "#" + "." * 11 + "P" + "." * 12 + "#"
+        elif i in {4, 8, 16, 20}:
+            # Internal walls with large gaps
+            row = "#" + "####" + "." * 13 + "####" + "#"
+        elif i in {6, 18}:
+            # Narrower central obstacles
+            row = "#" + "." * 10 + "###" + "." * 11 + "#"
+        else:
+            # Open rows with pellets
+            row = "#" + "." * 23 + "#"
+        game_map.append(row)
+    # Bottom wall
+    game_map.append("#" * 25)
