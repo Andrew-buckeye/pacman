@@ -1,0 +1,11 @@
+Document/understand BFS better
+    Queue starts to expand rapidly on third level, makes game crash. Why?
+Make starting position "P" work. dynamic starting pos
+
+implement and document DFS
+
+Make them efficent
+
+Add bad guys
+
+Make them efficent

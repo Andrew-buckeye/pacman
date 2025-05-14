@@ -58,7 +58,7 @@ def show_finish_screen(screen, font, screen_width, screen_height, level):
 
         title_text = title_font.render("Beat all Levels, You Rock!", True, (0, 255, 0))
         prompt_text = prompt_font.render("You're the best", True, (255, 255, 255))
-        instruction_text = prompt_font.render("Best SPACE to start again", True, (255, 255, 255))
+        instruction_text = prompt_font.render("Best SPACE to quit", True, (255, 255, 255))
 
         # Center the text
         screen.blit(title_text, ((screen_width - title_text.get_width()) // 2, screen_height // 4))
