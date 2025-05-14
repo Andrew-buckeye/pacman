@@ -65,7 +65,7 @@ level3.append("#" * 25)
 
 
 # List of levels
-levels = [level1, levle2, level3]
+levels = [levle2, level3]
 
 # Main game loop
 def main():

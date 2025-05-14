@@ -1,5 +1,5 @@
 import pygame
-from BFS import AI_movement
+from AI_traversal import BFS_movement, DFS_movement
 from inital_variables import init
 from menu import show_start_screen, show_end_screen, show_finish_screen
 from keys import check_and_eat_pellet
@@ -25,7 +25,7 @@ def AI_play_level(map_level, LEVEL, score, lives, speed):
 
     running = True
     while running:
-        pygame.time.delay(100)
+        pygame.time.delay(500)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
@@ -38,7 +38,9 @@ def AI_play_level(map_level, LEVEL, score, lives, speed):
         score_text = font.render(f"Score: {score}   Lives: {lives}   Level: {LEVEL}", True, (255, 0, 0))
         screen.blit(score_text, (10, 5))  # Draw near the top-left
 
-        x, y = AI_movement(x, y, walls_list, pellets_list, PLAYER_SIZE)
+        # x, y = BFS_movement(x, y, walls_list, pellets_list, PLAYER_SIZE)
+        x, y = DFS_movement(x, y, walls_list, pellets_list, PLAYER_SIZE)
+
 
         pygame.draw.rect(screen, (255, 0, 0), (x, y, PLAYER_SIZE, PLAYER_SIZE))
         player_rect = pygame.Rect(x, y, PLAYER_SIZE, PLAYER_SIZE)
@@ -57,3 +59,5 @@ def AI_play_level(map_level, LEVEL, score, lives, speed):
 
 
         pygame.display.update()
+
+
